@@ -1,0 +1,16 @@
+<li>
+    {{#unless digested}} 
+    <button class="change-eat btn btn-danger" data-id="{{id}}" data-neweat="{{eat}}">
+        {{#if eat}}{{this.name}}{{/if}}  
+        chew  
+    </button>   
+    {{this.id}}. {{this.thing_name}}
+    {{/unless}} 
+
+    {{#if digested}}
+    <button class="delete-thing btn btn-danger" data-id="{{this.id}}">
+        swallow
+    </button>
+    {{this.id}}. {{this.thing_name}}
+    {{/if}}
+</li>
