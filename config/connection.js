@@ -1,7 +1,9 @@
 const mysql = require("mysql");
+// const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL)
+  console.log("JAWSDB connected")
 } else {
   connection = mysql.createConnection({
     host: "localhost",
@@ -10,6 +12,7 @@ if (process.env.JAWSDB_URL) {
     password: "superroot",
     database: "consumption_db"
   });
+  console.log("MYSQL connected")
 }
 
 connection.connect();
