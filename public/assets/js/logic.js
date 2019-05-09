@@ -15,15 +15,15 @@ $(function () {
         );
     });
 
-    $(".change-eat").on("click", function (event) {
+    $(".change-chew").on("click", function (event) {
         let id = $(this).data("id");
-        let newEat = $(this).data("neweat");
-        let newEatState = {
-            digested: newEat
+        let newChew = $(this).data("newchew");
+        let newChewState = {
+            digested: newChew
         };
         $.ajax("./api/things/" + id, {
             type: "PUT",
-            data: newEatState
+            data: newChewState
         }).then(
             function () {
                 location.reload();

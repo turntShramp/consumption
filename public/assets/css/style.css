@@ -16,3 +16,13 @@ ul {
 .btn {
     margin: 5px;
 }
+.newThing {
+    background-color: #d0826e;
+    border: #d0826e;
+    color: white;
+    
+}
+.delete-thing {
+    background-color: rgb(114, 62, 33);
+    border: rgb(114, 62, 33);
+}

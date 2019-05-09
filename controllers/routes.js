@@ -5,20 +5,17 @@ const thing = require("../models/thing.js");
 // Routes
 router.get("/", (req, res) => {
     thing.all(data => {
-        let hbsObject = {
-            things: data
-        };
+        let hbsObject = {things: data};
         console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
 router.post("/api/things", (req, res) => {
-    thing.create([
-        "thing_name", "digested"
-    ], [
-        req.body.name, false
-    ], result => {
+    thing.create(
+        ["thing_name", "digested"], 
+        [req.body.name, false], 
+    result => {
         res.json({
             id: result.insertId
         });
@@ -41,7 +38,6 @@ router.put("/api/things/:id", (req, res) => {
 
 router.delete("/api/things/:id", (req, res) => {
     let condition = "id = " + req.params.id;
-
     thing.delete(condition, result => {
         if (result.affectedRows == 0) {
             return res.status(404).end();

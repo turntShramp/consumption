@@ -41,6 +41,7 @@ let orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
+        console.log(queryString);
         connection.query(queryString, vals, function (err, result) {
             if (err) {
                 throw err;
@@ -55,6 +56,7 @@ let orm = {
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
+        console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -66,6 +68,7 @@ let orm = {
         let queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
+        console.log(queryString);
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;

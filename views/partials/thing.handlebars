@@ -1,16 +1,17 @@
 <li>
     {{#unless digested}} 
-    <button class="change-eat btn btn-danger" data-id="{{id}}" data-neweat="{{eat}}">
-        {{#if eat}}{{this.name}}{{/if}}  
-        chew  
-    </button>   
-    {{this.id}}. {{this.thing_name}}
+        
+        <button class="change-chew btn btn-danger" data-id="{{id}}" data-newchew="{{chew}}">
+            {{#if chew}}{{this.name}}{{/if}}  
+            {{!-- {{this.id}} --}}
+            chew the {{this.thing_name}}  
+        </button>   
     {{/unless}} 
 
     {{#if digested}}
     <button class="delete-thing btn btn-danger" data-id="{{this.id}}">
-        swallow
+        {{!-- {{this.id}} --}}
+        swallow the {{this.thing_name}}
     </button>
-    {{this.id}}. {{this.thing_name}}
     {{/if}}
 </li>
